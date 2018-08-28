@@ -1,0 +1,24 @@
+Model First添加:
+编辑项目文件 
+<ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.1.3"></DotNetCliToolReference>
+</ItemGroup>
+
+在TargetFramework 节点后 添加 运行时项目版本修改(正常不需要)
+<RuntimeFrameworkVersion>2.0.3<RuntimeFrameworkVersion>
+执行命令生产迁移文件
+dotnet ef migrations add InitialCreate
+迁移删除
+dotnet ef migrations remove
+执行真实的文件
+dotnet ef database update
+
+
+
+创建迁移：migrationname为迁移名称	dotnet ef migrations add migrationName	add-migration migrationName
+移除迁移(删除最近的一次迁移)	dotnet ef migrations remove	remove-migration
+应用所有的迁移(使迁移文件应用到数据库)	dotnet ef database update	update-database
+指定版本进行迁移	dotnet ef database update migrationName	update-database migrationName
+生成对应版本的脚本	dotnet ef migrations script	Script-Migration
+查看迁移列表	dotnet ef migrations list	
+查看数据库上下文信息	dotnet ef dbcontext info	

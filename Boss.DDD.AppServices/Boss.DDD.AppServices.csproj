@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Boss.DDD</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Boss.DDD.Domain\Boss.DDD.Domain.csproj" />
+    <ProjectReference Include="..\Boss.DDD.Repositorys\Boss.DDD.Repositorys.csproj" />
+    <ProjectReference Include="..\Boss.DDD.Util\Boss.DDD.Util.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Dtos\OutDtos\" />
+  </ItemGroup>
+
+</Project>
