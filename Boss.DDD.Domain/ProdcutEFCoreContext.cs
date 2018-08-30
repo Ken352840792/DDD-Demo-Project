@@ -13,7 +13,7 @@ namespace Boss.DDD
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("data source=192.168.1.114;initial catalog=Test1;persist security info=True;user id=sa;password=qwer4321!@#$;MultipleActiveResultSets=True");
+            optionsBuilder.UseSqlServer(AppSetting.GetAppSetting("ProductContext"));
         }
     }
 }

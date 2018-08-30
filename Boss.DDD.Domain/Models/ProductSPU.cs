@@ -16,7 +16,7 @@ namespace Boss.DDD.POCOModels
             this.ProductSPUName = spuname;
             this.ProductSPUDes = spudes;
             this.ProductSKUS = productSKUs;
-            return null;
+            return this;
         }
     }
 }

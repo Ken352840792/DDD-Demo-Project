@@ -21,7 +21,7 @@ namespace Boss.DDD.POCOModels
         /// <summary>
         /// 产品规格（如:脉动300毫升）
         /// </summary>
-        public int Spec { get; set; }
+        public string Spec { get; set; }
 
         /// <summary>
         /// 产品的单位

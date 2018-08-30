@@ -19,9 +19,14 @@ namespace Boos.DDD.WebApi.Controllers
         public ResultEntity<bool> AddProduct([FromBody]AddProductSPUDto addProductSPUDto)
         {
             var result = new ResultEntity<bool>();
+
+            //创建产品EF 连接上下文
             var productDbContext = new ProdcutEFCoreContext();
+            //EF仓储
             var repository = new EFCoreRepository(productDbContext);
+            //产品EF仓库
             var productEFCoreRepository = new ProductEFCoreRepository(productDbContext);
+            //添加产品SPU 服务用例
             var addProductSPUUseCase = new AddProductSPUUseCase(repository, productEFCoreRepository);
             try
             {

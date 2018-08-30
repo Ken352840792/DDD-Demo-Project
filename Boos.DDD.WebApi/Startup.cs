@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Boss.DDD;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -34,7 +35,7 @@ namespace Boos.DDD.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            AppSetting.SetAppSetting(Configuration.GetSection("ConnectionString"));
             app.UseMvc();
         }
     }

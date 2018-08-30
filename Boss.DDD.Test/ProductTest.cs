@@ -13,9 +13,16 @@ namespace Boss.DDD.Test
     {
         private HttpClient http;
 
+        private delegate double aaa(double aa);
+
         [TestMethod]
         public void AddProductTest()
         {
+            aaa hh = f =>
+             {
+                 return Math.Pow(f, 2);
+             };
+            var ff = hh(10);
             http = new HttpClient();
             var fs = new FileStream(@"C:\Users\Ken\source\repos\Boss.DDD\Boss.DDD.Test\Img\photo.png", FileMode.Open, FileAccess.Read);
             var by = new byte[fs.Length];
@@ -47,7 +54,7 @@ namespace Boss.DDD.Test
             HttpContent httpContent = new StringContent(json);
             httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
             var result = http.PostAsync("http://localhost:54309/api/Product/AddProduct", httpContent).Result;
-            var val = result.Content.ReadAsStringAsync();
+            var val = result.Content.ReadAsStringAsync().Result;
         }
     }
 }

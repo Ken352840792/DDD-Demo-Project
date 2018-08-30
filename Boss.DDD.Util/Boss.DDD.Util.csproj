@@ -7,6 +7,9 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Unity.Container" Version="5.8.10" />
+    <PackageReference Include="Unity.ServiceLocation" Version="2.1.2" />
   </ItemGroup>
 
 </Project>

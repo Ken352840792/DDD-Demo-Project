@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Boss.DDD.AppServices\Boss.DDD.AppServices.csproj" />
-    <ProjectReference Include="..\Boss.DDD.Domain\Boss.DDD.Domain.csproj" />
     <ProjectReference Include="..\Boss.DDD.Util\Boss.DDD.Util.csproj" />
   </ItemGroup>
 

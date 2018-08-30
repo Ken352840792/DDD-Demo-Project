@@ -30,6 +30,7 @@ namespace Boss.DDD.POCOModels
                     this.Unit = Unit.瓶;
                     break;
             }
+            this.Spec = spec;
             return this;
         }
     }
