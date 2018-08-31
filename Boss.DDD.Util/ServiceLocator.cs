@@ -13,14 +13,14 @@ namespace Boss.DDD
     {
         private readonly IUnityContainer _unityContainer;
 
-        public ServiceLocator(IUnityContainer unityContainer)
+        public ServiceLocator()
         {
-            _unityContainer = unityContainer;
+            _unityContainer = new UnityContainer();
             var jsonservice = JObject.Parse(File.ReadAllText("appsettings.json"))["DIService"];
             var requestservers = JsonConvert.DeserializeObject<List<DIService>>(jsonservice.ToString());
             foreach (var item in requestservers)
             {
-                _unityContainer.RegisterType(Type.GetType(item.InterfaceType), Type.GetType(item.InterfaceType));
+                _unityContainer.RegisterType(Type.GetType(item.InterfaceType), Type.GetType(item.ImplActionType));
             }
         }
 

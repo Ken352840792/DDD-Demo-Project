@@ -7,6 +7,7 @@ using Boss.DDD.Dtos;
 using Boss.DDD.ProductRepositorys;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Unity.Resolution;
 
 namespace Boos.DDD.WebApi.Controllers
 {
@@ -14,19 +15,26 @@ namespace Boos.DDD.WebApi.Controllers
     [Produces("application/json")]
     public class ProductController : Controller
     {
+        private ServiceLocator _serviceLocator = new ServiceLocator();
+
         [HttpPost]
         [Route("AddProduct")]
         public ResultEntity<bool> AddProduct([FromBody]AddProductSPUDto addProductSPUDto)
         {
             var result = new ResultEntity<bool>();
+            var productDbContext = _serviceLocator.GetService<IProdcutContext>();
 
-            //创建产品EF 连接上下文
-            var productDbContext = new ProdcutEFCoreContext();
-            //EF仓储
-            var repository = new EFCoreRepository(productDbContext);
-            //产品EF仓库
-            var productEFCoreRepository = new ProductEFCoreRepository(productDbContext);
-            //添加产品SPU 服务用例
+            var repository = _serviceLocator.GetService<IRepository>(new ParameterOverrides() { { "dbContext", productDbContext } });
+
+            var productEFCoreRepository = _serviceLocator.GetService<IProductRepository>(new ParameterOverrides() { { "dbContext", productDbContext } });
+
+            ////创建产品EF 连接上下文
+            //var productDbContext = new ProdcutEFCoreContext();
+            ////EF仓储
+            //var repository = new EFCoreRepository(productDbContext);
+            ////产品EF仓库
+            //var productEFCoreRepository = new ProductEFCoreRepository(productDbContext);
+            ////添加产品SPU 服务用例
             var addProductSPUUseCase = new AddProductSPUUseCase(repository, productEFCoreRepository);
             try
             {
