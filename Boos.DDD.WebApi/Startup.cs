@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Boos.DDD.WebApi
+namespace Boss.DDD.WebApi
 {
     public class Startup
     {

@@ -18,11 +18,18 @@ namespace Boss.DDD.Test
         [TestMethod]
         public void AddProductTest()
         {
+            #region ÄãºÃ
+
             aaa hh = f =>
-             {
-                 return Math.Pow(f, 2);
-             };
+            {
+                return Math.Pow(f, 2);
+            };
             var ff = hh(10);
+
+            #endregion ÄãºÃ
+
+
+
             http = new HttpClient();
             var fs = new FileStream(@"C:\Users\Ken\source\repos\Boss.DDD\Boss.DDD.Test\Img\photo.png", FileMode.Open, FileAccess.Read);
             var by = new byte[fs.Length];

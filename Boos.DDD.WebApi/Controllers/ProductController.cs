@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Unity.Resolution;
 
-namespace Boos.DDD.WebApi.Controllers
+namespace Boss.DDD.WebApi.Controllers
 {
     [Route("api/Product")]
     [Produces("application/json")]

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Boos.DDD.WebApi
+namespace Boss.DDD.WebApi
 {
     public class Program
     {
