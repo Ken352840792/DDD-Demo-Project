@@ -9,6 +9,7 @@ namespace Boss.DDD.POCOModels
     {
         public Contact()
         {
+             
         }
 
         public Guid Id { get; set; }

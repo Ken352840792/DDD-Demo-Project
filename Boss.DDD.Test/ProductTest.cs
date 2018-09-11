@@ -31,7 +31,7 @@ namespace Boss.DDD.Test
 
 
             http = new HttpClient();
-            var fs = new FileStream(@"C:\Users\Ken\source\repos\Boss.DDD\Boss.DDD.Test\Img\photo.png", FileMode.Open, FileAccess.Read);
+            var fs = new FileStream(@"D:\GitHubProjects\Boss.DDD\Boss.DDD.Test\Img\photo.png", FileMode.Open, FileAccess.Read);
             var by = new byte[fs.Length];
             fs.Read(by, 0, Convert.ToInt32(fs.Length));
             fs.Close();

@@ -2,16 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <RootNamespace>Boss.DDD</RootNamespace>
+
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Dtos\OutDtos\" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.2.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.2.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Boos.DDD.Domain.Dealer\Boss.DDD.Domain.Dealer.csproj" />
-    <ProjectReference Include="..\Boss.DDD.Repositorys\Boss.DDD.Repositorys.csproj" />
+    <ProjectReference Include="..\Boss.DDD.AppServices.Dealer\Boss.DDD.AppServices.Dealer.csproj" />
     <ProjectReference Include="..\Boss.DDD.Util\Boss.DDD.Util.csproj" />
   </ItemGroup>
 
